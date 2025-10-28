@@ -19,11 +19,11 @@ class Producto {
     this.precio = precio;
     this.stock = stock;
   }
-   static sumarPrecios(productos) {
+  static sumarPrecios(productos) {
     return productos.reduce((total, producto) => total + producto.precio, 0);
   }
   static productosConStock(productos) {
-    return productos.filter(producto => producto.stock > 0);
+    return productos.filter((producto) => producto.stock > 0);
   }
 }
 const productos = [
@@ -43,12 +43,7 @@ const productos = [
     45000,
     12
   ),
-  new Producto(3,
-      "Mouse gamer", 
-      "Mouse óptico 7200 DPI",
-      "Logitech", 
-      35000,
-       0),
+  new Producto(3, "Mouse gamer", "Mouse óptico 7200 DPI", "Logitech", 35000, 0),
   new Producto(
     4,
     "Notebook",
@@ -68,4 +63,89 @@ const productos = [
 ];
 
 console.log(Producto.sumarPrecios(productos));
-console.log(Producto.productosConStock(productos))
+console.log(Producto.productosConStock(productos));
+
+//&Ejercicio 2
+//*Dados los siguientes arrays:
+//*Usa el operador Spread para unir ambos arrays y obtener el número máximo.
+
+let num1 = [23, 56, 3, 67];
+let num2 = [100, 456, 2, 347];
+
+let numeros = [...num1, ...num2];
+let maximo = Math.max(...numeros); //~devuelve el numero maximo de una lista de valores no de un array
+console.log(maximo);
+
+//& Ejercicio 3
+//*Tenemos estos dos objetos:
+// ?Usando spread operator y desestructuración de objetos necesitamos crear un nuevo objeto que contenga la
+// ?propiedad brand de ---myVehicle--- y todas las propiedades de ---updateMyVehicle---
+
+const myVehicle = {
+  brand: "Ford",
+  model: "Mustang",
+  color: "red",
+};
+
+const updateMyVehicle = {
+  type: "car",
+  year: 2021,
+  color: "yellow",
+};
+
+const { brand } = myVehicle;
+const nuevoObjeto = { brand, ...updateMyVehicle };
+console.log(nuevoObjeto);
+
+
+
+// &Ejercicio 4
+//* Dado el siguiente código:
+//? Usar el operador ternario para simplificar el condicional.
+
+let isActive = true;
+// if (isActive) {
+//   console.log("Activado");
+// } else {
+//   console.warn("No está activado");
+// }
+console.log(isActive ? "Activado " : "No está activado")
+
+
+
+// &Ejercicio 5
+// *Dado el siguiente código:
+
+//^ Realiza las modificaciones necesarias para que se puedan exportar ambos objetos
+ export let superheroe = {
+  alias: "Batman",
+  nombre: "Bruce Wayne",
+  habilidad: "resolver problemas y misterios",
+};
+
+ export const usuario = {
+  id: 1,
+  name: "Leanne Graham",
+  username: "Bret",
+  email: "Sincere@april.biz",
+  address: {
+    street: "Kulas Light",
+    suite: "Apt. 556",
+    city: "Gwenborough",
+    zipcode: "92998-3874",
+    geo: {
+      lat: "-37.3159",
+      lng: "81.1496",
+    },
+  },
+  phone: "1-770-736-8031 x56442",
+  website: "hildegard.org",
+  company: {
+    name: "Romaguera-Crona",
+    catchPhrase: "Multi-layered client-server neural-net",
+    bs: "harness real-time e-markets",
+  },
+};
+
+
+
